@@ -17,3 +17,33 @@ rm(list=ls())
 datosRBase <- read.csv("data/Baltimore_City_Employee_Salaries.csv")
 ```
 
+#Importamos datos con Readr
+
+```{r}
+library(readr)
+datosReadr <- read_csv("data/Baltimore_City_Employee_Salaries.csv", 
+    col_types = cols(annualSalary = col_integer(), 
+        grossPay = col_number(), hireDate = col_date(format = "%Y-%m-%d"), 
+        ObjectId = col_integer()))
+```
+
+#Importamos datos con la librería RIO
+
+```{r}
+library(rio)
+DatosRio<- import(file="data/Baltimore_City_Employee_Salaries.csv")
+#Hay una función llamada import(list), que dandole una lista de ficheros los importa todos a la vez
+```
+
+#Importamos el fichero leyendo linea a linea
+
+```{r}
+fichero<-"data/Baltimore_City_Employee_Salaries.csv"
+guess_encoding(fichero)
+
+#Leemos con la codificación adecuada
+f<-file(fichero, encoding='UTF-8')
+datosLineas<-readLines
+#Con se refiere a con quien quieres comunicarte, el canal con el que establece. Es como el identificador del canal, de la comunicación
+```
+
