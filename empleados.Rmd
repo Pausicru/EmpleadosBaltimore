@@ -46,4 +46,7 @@ f<-file(fichero, encoding='UTF-8')
 datosLineas<-readLines
 #Con se refiere a con quien quieres comunicarte, el canal con el que establece. Es como el identificador del canal, de la comunicación
 ```
+```{r}
+guess_encoding('empleados.rmd')
+```
 
